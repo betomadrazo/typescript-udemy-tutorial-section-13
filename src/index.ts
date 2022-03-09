@@ -4,5 +4,8 @@ const user = new User({ name: 'Betito Rocker', age: 41 });
 
 console.log(user.get('name'))
 
-// Reminder of how 'this' works in javascript
- 
+user.on('change', () => {
+  console.log('User was changed');
+});
+
+user.trigger('change');
